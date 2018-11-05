@@ -1,0 +1,19 @@
+
+
+.splash {
+  background-color: blue;
+  height: 100vh;
+  width: 100vw;
+  // grid-template-columns: 
+  // grid-template-rows: 
+  grid-gap: 20px;
+  justify-content: space-around;
+  padding: 25px 25px 25px 75px;
+  grid-auto-flow: dense;
+}
+
+button {
+  width: 100px;
+  height: 50px;
+  margin: 10px;
+}
