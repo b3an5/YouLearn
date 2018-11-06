@@ -75,7 +75,7 @@ class App extends Component {
     return (
       <div className="App">
         <Splash filterCatigory={this.filterCatigory} youLearnVideos={this.state.youLearnVideos} />
-        {/* <Header /> */}
+        <Header />
         <CardContainer getAllVideos={this.getAllVideos}
           filteredVideos={this.state.filteredVideos}  />
         {/* <Saved /> */}

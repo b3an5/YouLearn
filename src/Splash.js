@@ -14,9 +14,11 @@ export default class Splash extends Component {
   hideSplash = (event) => {
     let splashPage = document.querySelector('.splash');
     let cardContainer = document.querySelector('.card-container');
+    let header = document.querySelector('.header');
     
     splashPage.classList.add('display-none');
     cardContainer.classList.remove('display-none');
+    header.classList.remove('display-none');
     this.props.filterCatigory(event);
   }
 
@@ -25,7 +27,7 @@ export default class Splash extends Component {
   render() {
     return(
       <div className='splash'>    
-        <h1 className='title'><i class="fas fa-brain"></i>YouLearn</h1>    
+        <h1 className='title'><i class="fab fa-youtube"></i>You<i class="fas fa-brain"></i>Learn</h1>    
         <button onClick={this.hideSplash}>HTML</button>
         <button onClick={this.hideSplash}>CSS</button>
         <button onClick={this.hideSplash}>Flexbox</button>
