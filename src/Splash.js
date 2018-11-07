@@ -9,7 +9,7 @@ export default class Splash extends Component {
     let cardContainer = document.querySelector('.card-container');
     let header = document.querySelector('.header');
     let sidebar = document.querySelector('.sidebar-wrapper');
-    
+
     splashPage.classList.add('display-none');
     cardContainer.classList.remove('display-none');
     header.classList.remove('display-none');

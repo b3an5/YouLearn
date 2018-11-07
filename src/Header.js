@@ -7,7 +7,7 @@ export default class Header extends Component {
     let splashPage = document.querySelector('.splash');
     let cardContainer = document.querySelector('.card-container');
     let header = document.querySelector('.header');
-    let card = document.querySelector('.card');
+    // let card = document.querySelector('.card');
     let sidebar = document.querySelector('.sidebar-wrapper');
 
 
@@ -15,7 +15,7 @@ export default class Header extends Component {
     splashPage.classList.remove('display-none');
     cardContainer.classList.add('display-none');
     header.classList.add('display-none');
-    card.classList.add('display-none');
+    // card.classList.add('display-none');
     sidebar.classList.add('display-none');
   }
 
