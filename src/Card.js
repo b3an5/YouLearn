@@ -6,7 +6,7 @@ export default class Card extends Component {
   render() {
     return(
       <div className='card'>
-        <h1>{this.props.video.title}</h1>
+        <h1 onClick={this.props.savedVideo}>{this.props.video.title}<i className="far fa-bookmark"></i></h1>
         <iframe 
         width="560" 
         height="315" 

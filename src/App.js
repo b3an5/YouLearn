@@ -15,6 +15,7 @@ class App extends Component {
       filteredVideos: [],
       catTitles: [],
       displayMain: false,
+      savedVideos: [],
     }
   }
 
@@ -114,6 +115,10 @@ class App extends Component {
       filteredVideos
   })
   }
+
+  savedVideo = (event) => {
+    console.log(event.target.Object)
+  }
   
   render() {
     return (
@@ -126,7 +131,8 @@ class App extends Component {
         <div className='r-side'>
           <Header resetFilter={this.resetFilter} />
           <CardContainer getAllVideos={this.getAllVideos}
-            filteredVideos={this.state.filteredVideos}  />
+            filteredVideos={this.state.filteredVideos} 
+            savedVideo={this.savedVideo} />
           {/* <Saved /> */}
         </div>
       </div>
