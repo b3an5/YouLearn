@@ -11,9 +11,9 @@ export default class Card extends Component {
         width="560" 
         height="315" 
         src={this.props.video.url}
-        frameborder="0" 
+        frameBorder="0" 
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen></iframe>
+        allowFullScreen></iframe>
         <VideoDiscription video={this.props.video} />
       </div>
     )

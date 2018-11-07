@@ -4,6 +4,7 @@ import Header from "./Header";
 import CardContainer from "./Card-Container";
 import Splash from "./Splash";
 import Saved from "./Saved";
+import Sidebar from "./Sidebar";
 
 class App extends Component {
   constructor() {
@@ -12,7 +13,8 @@ class App extends Component {
       youLearnVideos: [],
       allVideos: [],
       filteredVideos: [],
-      catTitles: []
+      catTitles: [],
+      displayMain: false,
     }
   }
 
@@ -43,10 +45,7 @@ class App extends Component {
   }
   
   filterVideos = () => {
-    // event.preventDefault();
     this.getAllVideos(this.state.youLearnVideos);
-    // this.getCheckedRadios();
-    // let sizeCheckbox = this.state.checkedBoxes[1].id.toLowerCase();
     let filteredVideos = this.state.allVideos.filter(vid => {
       return vid;
     });
@@ -69,16 +68,68 @@ class App extends Component {
       filteredVideos
     });
   }
+
+  filterLength = (event) => {
+    console.log(event.target.innerText)
+    let filteredVideos = this.state.filteredVideos.filter((currentVid) => {
+      if (event.target.innerText === 'Short') {
+        return currentVid.time < 30;  
+      } else {
+        return currentVid.time >= 30;
+      }
+    });
+
+    this.setState({
+      filteredVideos
+    });
+  }
+
+  filterLevel = (event) => {
+    let filteredVideos = this.state.filteredVideos.filter((currentVid) => {
+      console.log(currentVid.level)
+      return event.target.innerText === currentVid.level;
+    })
+
+    this.setState({
+      filteredVideos
+    })
+  }
+  
+  filterLevel = (event) => {
+    let filteredVideos = this.state.filteredVideos.filter((currentVid) => {
+      return event.target.innerText === currentVid.level;
+    })
+
+    this.setState({
+      filteredVideos
+    })
+  }
+
+  resetFilter = () => {
+    console.log(this.state.filteredVideos);
+    console.log(this.state.allVideos);
+
+    let filteredVideos = this.state.allVideos;
+    
+    this.setState({
+      filteredVideos
+  })
+  }
   
   render() {
-    console.log(this.state.youLearnVideos.HTML)
     return (
       <div className="App">
+        <div className="sidebar-wrapper display-none">
+          <Sidebar filterLength={this.filterLength}
+          filterLevel={this.filterLevel} />
+        </div>
         <Splash filterCatigory={this.filterCatigory} youLearnVideos={this.state.youLearnVideos} />
-        <Header />
-        <CardContainer getAllVideos={this.getAllVideos}
-          filteredVideos={this.state.filteredVideos}  />
-        {/* <Saved /> */}
+        <div className='r-side'>
+          <Header resetFilter={this.resetFilter} />
+          <CardContainer getAllVideos={this.getAllVideos}
+            filteredVideos={this.state.filteredVideos}  />
+          {/* <Saved /> */}
+        </div>
       </div>
     );
   }

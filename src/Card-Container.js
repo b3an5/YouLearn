@@ -5,7 +5,6 @@ import './main.scss';
 export default class CardContainer extends Component {
 
   render() {
-    console.log(this.props.allVideos)
     return(
       <div className='display-none card-container'>
         {this.props.filteredVideos.map((vid, index) => {

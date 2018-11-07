@@ -1,11 +1,11 @@
 
 
 .splash {
-  background-image: url("./pics/27094.jpg");
+  background-image: url("./pics/classroom.jpeg");
   background-size: cover;
   height: 100vh;
   width: 100%;
-  // grid-template-columns: 
+  grid-column: span 2;
   // grid-template-rows: 
   grid-gap: 20px;
   justify-content: space-around;
