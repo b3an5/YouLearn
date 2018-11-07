@@ -8,7 +8,7 @@ export default class CardContainer extends Component {
     return(
       <div className='display-none card-container'>
         {this.props.filteredVideos.map((vid, index) => {
-          return <Card key={index} video={vid} />;
+          return <Card savedVideo={this.props.savedVideo} key={index} video={vid} />;
         })}
       </div>
     )
