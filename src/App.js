@@ -86,7 +86,6 @@ class App extends Component {
 
   filterLevel = (event) => {
     let filteredVideos = this.state.filteredVideos.filter((currentVid) => {
-      console.log(currentVid.level)
       return event.target.innerText === currentVid.level;
     })
 
